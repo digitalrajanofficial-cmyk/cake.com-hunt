@@ -115,10 +115,10 @@ jobs:
           if [ -f state/inventory.json ]; then
             cp state/inventory.json state/previous-inventory.json
           fi
-          python -m hunt_pipeline collect --config config/program.json --input inputs/seed.txt --output state/inventory.json --method HEAD --limit 1
+          python -m hunt_pipeline collect --config config/program.json --input inputs/seed.txt --output state/inventory.json --method HEAD --limit 20
       - name: Merge optional passive recon exports
         if: hashFiles('recon-input/*') != ''
-        run: python -m hunt_pipeline import-recon --config config/program.json --input-dir recon-input --base state/inventory.json --output state/inventory.json --limit 1000
+        run: python -m hunt_pipeline import-recon --config config/program.json --input-dir recon-input --base state/inventory.json --output state/inventory.json --limit 20000
       - name: Compute CAKE-HUNT inventory delta
         run: |
           if [ -f state/previous-inventory.json ]; then
