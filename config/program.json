@@ -1,11 +1,25 @@
 {
   "program": "cake.com",
-  "display_name": "Cake Security",
+  "display_name": "Cake Security — web+api",
   "enabled": true,
   "authorization_reference": "https://security.cake.com/",
   "allowed_hosts": [
-    "security.cake.com",
-    "api.cake.com"
+    "app.clockify.me",
+    "app.plaky.com",
+    "app.pumble.com",
+    "account.cake.com",
+    "marketplace.cake.com",
+    "developer.marketplace.cake.com",
+    "api.clockify.me",
+    "*.api.clockify.me",
+    "api.plaky.com",
+    "*.api.plaky.com",
+    "api-ga.pumble.com",
+    "*.api-ga.pumble.com",
+    "api.marketplace.cake.com",
+    "*.api.marketplace.cake.com",
+    "api.developer.marketplace.cake.com",
+    "*.api.developer.marketplace.cake.com"
   ],
   "denied_hosts": [],
   "allowed_methods": [
