@@ -1,1 +1,2 @@
-https://example.test/
+https://security.cake.com/
+https://api.cake.com/

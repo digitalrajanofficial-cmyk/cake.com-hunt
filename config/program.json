@@ -1,10 +1,11 @@
 {
   "program": "cake.com",
-  "display_name": "cake-hunt",
-  "enabled": false,
-  "authorization_reference": "PENDING_WRITTEN_AUTHORIZATION",
+  "display_name": "Cake Security",
+  "enabled": true,
+  "authorization_reference": "https://security.cake.com/",
   "allowed_hosts": [
-    "example.test"
+    "security.cake.com",
+    "api.cake.com"
   ],
   "denied_hosts": [],
   "allowed_methods": [
@@ -18,5 +19,5 @@
   "require_https": true,
   "allow_redirects": false,
   "probe_timeout_seconds": 10,
-  "max_response_bytes": 1048576
+  "max_response_bytes": 262144
 }
