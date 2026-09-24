@@ -213,6 +213,16 @@ jobs:
       - name: Store CAKE-HUNT single-model fallback
         if: hashFiles('artifacts/triage-consensus.json') == '' && hashFiles('artifacts/triage-a.json') != ''
         run: python -m hunt_pipeline --db data/hunt.sqlite ingest-verdicts --input artifacts/triage-a.json --model free-pool-fallback
+      - name: Notify Discord on VALID
+        if: hashFiles('artifacts/triage-consensus.json') != '' || hashFiles('artifacts/triage-a.json') != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          INPUT="artifacts/triage-consensus.json"
+          if [ ! -f "$INPUT" ]; then INPUT="artifacts/triage-a.json"; fi
+          if [ -f "$INPUT" ]; then
+            python -m hunt_pipeline notify-discord --program cake.com --input "$INPUT" --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+          fi
       - name: Update knowledge from triage
         if: hashFiles('artifacts/triage-consensus.json') != '' || hashFiles('artifacts/triage-a.json') != ''
         run: |
