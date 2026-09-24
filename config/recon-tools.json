@@ -1,0 +1,146 @@
+{
+  "default_passive": [
+    {
+      "name": "subfinder",
+      "source": "https://github.com/projectdiscovery/subfinder",
+      "mode": "passive",
+      "runner": true
+    },
+    {
+      "name": "dnsx",
+      "source": "https://github.com/projectdiscovery/dnsx",
+      "mode": "scoped-resolution",
+      "runner": true
+    },
+    {
+      "name": "httpx",
+      "source": "https://github.com/projectdiscovery/httpx",
+      "mode": "scoped-http",
+      "runner": true
+    },
+    {
+      "name": "gau",
+      "source": "https://github.com/lc/gau",
+      "mode": "passive-urls",
+      "runner": true
+    },
+    {
+      "name": "waybackurls",
+      "source": "https://github.com/tomnomnom/waybackurls",
+      "mode": "passive-urls",
+      "runner": true
+    },
+    {
+      "name": "waymore",
+      "source": "https://github.com/xnl-h4ck3r/waymore",
+      "mode": "passive-urls",
+      "runner": true,
+      "version": "8.9"
+    }
+  ],
+  "optional_active": [
+    {
+      "name": "katana",
+      "source": "https://github.com/projectdiscovery/katana",
+      "mode": "active-crawl",
+      "runner": true
+    },
+    {
+      "name": "nuclei",
+      "source": "https://github.com/projectdiscovery/nuclei",
+      "mode": "active-templates",
+      "runner": true
+    },
+    {
+      "name": "naabu",
+      "source": "https://github.com/projectdiscovery/naabu",
+      "mode": "active-port-scan",
+      "runner": true
+    },
+    {
+      "name": "ffuf",
+      "source": "https://github.com/ffuf/ffuf",
+      "mode": "active-content-discovery",
+      "runner": true
+    },
+    {
+      "name": "gf",
+      "source": "https://github.com/tomnomnom/gf",
+      "mode": "input-patterns",
+      "runner": true
+    },
+    {
+      "name": "ghauri",
+      "source": "https://github.com/r0oth3x49/ghauri",
+      "mode": "active-sqli",
+      "runner": true,
+      "version": "1.4.3"
+    },
+    {
+      "name": "nomore403",
+      "source": "https://github.com/devploit/nomore403",
+      "mode": "active-access-control-bypass",
+      "runner": true
+    },
+    {
+      "name": "crlf",
+      "source": "https://github.com/MichaelStott/CRLF-Injection-Scanner",
+      "mode": "active-crlf",
+      "runner": true
+    },
+    {
+      "name": "gitleaks",
+      "source": "https://github.com/gitleaks/gitleaks",
+      "mode": "source-secret-scan",
+      "runner": true
+    },
+    {
+      "name": "trufflehog",
+      "source": "https://github.com/trufflesecurity/trufflehog",
+      "mode": "source-secret-scan",
+      "runner": true
+    },
+    {
+      "name": "dalfox",
+      "source": "https://github.com/hahwul/dalfox",
+      "mode": "active-xss"
+    },
+    {
+      "name": "sqlmap",
+      "source": "https://github.com/sqlmapproject/sqlmap",
+      "mode": "active-injection",
+      "runner": true,
+      "install": "git-checkout"
+    },
+    {
+      "name": "nmap",
+      "source": "https://github.com/nmap/nmap",
+      "mode": "active-port-scan"
+    }
+  ],
+  "local_inventory": {
+    "source": "user-provided TOOLS collection",
+    "ci_policy": "local scripts are not copied or executed automatically",
+    "covered_by_official_workflow_tools": [
+      "ghauri",
+      "sqlmap",
+      "gf",
+      "waymore",
+      "crlf",
+      "nomore403"
+    ],
+    "not_imported": [
+      "customBsqli",
+      "loxs",
+      "CloudFlair",
+      "scripts/alienvault.sh",
+      "scripts/wayback.sh",
+      "scripts/my_custom/recon_flow.sh",
+      "scripts/my_custom/my_fuzzer.sh",
+      "scripts/my_custom/gitscanner.sh",
+      "scripts/my_custom/origin_ip_finder.sh",
+      "scripts/my_custom/pub_s3_url_extractor.sh",
+      "scripts/my_custom/cspfetcher.sh"
+    ]
+  }
+}
