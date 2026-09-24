@@ -1,2 +1,9 @@
-https://security.cake.com/
-https://api.cake.com/
+https://app.clockify.me/
+https://app.plaky.com/
+https://app.pumble.com/
+https://account.cake.com/
+https://marketplace.cake.com/
+https://developer.marketplace.cake.com/
+https://api.clockify.me/api/
+https://api.plaky.com/
+https://api-ga.pumble.com/
